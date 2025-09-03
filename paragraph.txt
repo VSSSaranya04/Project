@@ -1,0 +1,6 @@
+This project is a modern and responsive Login Page designed using HTML and CSS.
+It focuses on creating a clean and user-friendly interface with properly styled 
+input fields for username/email and password, along with a clearly visible login button. 
+The layout is minimal yet elegant, ensuring accessibility and responsiveness across different devices. 
+With additional touches like a “Remember Me” option and “Forgot Password” link, this page represents 
+the foundation of many real-world web applications while keeping the design simple and professional.
