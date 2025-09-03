@@ -3,77 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Hospital Patient Registration</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            margin: 20px;
             background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
         }
-        .login-container {
-            background-color: #fff;
-            padding: 30px;
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            text-align: center;
         }
-        .login-container h2 {
-            margin-bottom: 20px;
+        h2 {
+            text-align: center;
             color: #333;
         }
-        .form-group {
-            margin-bottom: 15px;
-            text-align: left;
-        }
-        .form-group label {
+        label {
             display: block;
-            margin-bottom: 5px;
-            color: #555;
+            margin-bottom: 8px;
+            font-weight: bold;
         }
-        .form-group input[type="text"],
-        .form-group input[type="password"] {
-            width: calc(100% - 20px);
+        input[type="text"],
+        input[type="date"],
+        input[type="email"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: calc(100% - 22px);
             padding: 10px;
+            margin-bottom: 15px;
             border: 1px solid #ddd;
             border-radius: 4px;
-            font-size: 16px;
         }
-        .form-group input[type="submit"] {
-            background-color: #007bff;
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        .gender-options label {
+            display: inline-block;
+            margin-right: 15px;
+        }
+        button {
+            background-color: #4CAF50;
             color: white;
-            padding: 10px 15px;
+            padding: 12px 20px;
             border: none;
             border-radius: 4px;
             cursor: pointer;
-            font-size: 16px;
             width: 100%;
-            transition: background-color 0.3s ease;
+            font-size: 16px;
         }
-        .form-group input[type="submit"]:hover {
-            background-color: #0056b3;
+        button:hover {
+            background-color: #45a049;
         }
     </style>
 </head>
 <body>
-    <div class="login-container">
-        <h2>Login</h2>
+    <div class="container">
+        <h2>Patient Registration Form</h2>
         <form action="#" method="post">
-            <div class="form-group">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <label>Gender:</label>
+            <div class="gender-options">
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label>
+                <input type="radio" id="other" name="gender" value="other">
+                <label for="other">Other</label>
             </div>
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Login">
-            </div>
+            <br>
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" rows="3" required></textarea>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="e.g., 1234567890" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+
+            <label for="bloodGroup">Blood Group:</label>
+            <select id="bloodGroup" name="bloodGroup">
+                <option value="">Select</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+            </select>
+
+            <label for="emergencyContactName">Emergency Contact Name:</label>
+            <input type="text" id="emergencyContactName" name="emergencyContactName" required>
+
+            <label for="emergencyContactPhone">Emergency Contact Phone:</label>
+            <input type="tel" id="emergencyContactPhone" name="emergencyContactPhone" pattern="[0-9]{10}" required>
+
+            <label for="medicalHistory">Brief Medical History (Optional):</label>
+            <textarea id="medicalHistory" name="medicalHistory" rows="4"></textarea>
+
+            <button type="submit">Register Patient</button>
         </form>
     </div>
 </body>
